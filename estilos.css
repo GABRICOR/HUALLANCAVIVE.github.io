@@ -1,0 +1,1779 @@
+/* =========================================================
+   HUALLANCAVIVE
+   GUÍA TURÍSTICA DIGITAL DE HUALLANCA
+   Responsive PC + TABLET + CELULAR
+   Creado y desarrollado por Gabriel Cornelio Reyes
+   2026
+========================================================= */
+
+/* =========================================================
+   FUENTE
+========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+
+/* =========================================================
+   CONFIGURACIÓN GENERAL
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    font-family: "DM Sans", Arial, Helvetica, sans-serif;
+    background: #f7f5ef;
+    color: #20251f;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+input {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 75px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 7%;
+
+    background: rgba(255, 255, 255, 0.92);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    z-index: 1000;
+
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.logo {
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+.logo span {
+    font-weight: 400;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 30px;
+}
+
+.navbar nav a {
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.navbar nav a:hover {
+    opacity: 0.55;
+}
+
+.menu-btn {
+    display: none;
+
+    border: none;
+    background: transparent;
+
+    font-size: 25px;
+
+    padding: 5px;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+
+    padding: 120px 8% 80px;
+
+    position: relative;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(10, 17, 11, 0.85),
+            rgba(10, 17, 11, 0.35),
+            rgba(10, 17, 11, 0.05)
+        ),
+        url("imagenes/huallanca.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    max-width: 700px;
+    color: white;
+    animation: aparecer 1s ease;
+}
+
+.mini-title {
+    letter-spacing: 4px;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-family: "Playfair Display", Georgia, serif;
+
+    font-size: clamp(70px, 10vw, 145px);
+
+    line-height: 0.9;
+
+    letter-spacing: -5px;
+
+    margin-bottom: 25px;
+}
+
+.hero h2 {
+    font-size: clamp(20px, 3vw, 34px);
+
+    font-weight: 400;
+
+    margin-bottom: 20px;
+}
+
+.hero p {
+    max-width: 600px;
+
+    font-size: 18px;
+
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 14px 25px;
+
+    border-radius: 50px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+.primary {
+    background: white;
+    color: #182018;
+}
+
+.secondary {
+    border: 1px solid white;
+    color: white;
+}
+
+
+/* =========================================================
+   SECCIONES
+========================================================= */
+
+section {
+    padding: 100px 8%;
+}
+
+.intro {
+    max-width: 850px;
+    margin: auto;
+    text-align: center;
+}
+
+.section-label {
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 10px;
+
+    opacity: 0.6;
+}
+
+.intro h2,
+.section-header h2 {
+    font-family: "Playfair Display", Georgia, serif;
+
+    font-size: clamp(35px, 5vw, 60px);
+
+    line-height: 1.1;
+
+    margin-bottom: 20px;
+}
+
+.intro p:last-child {
+    font-size: 18px;
+
+    color: #666;
+
+    max-width: 700px;
+
+    margin: auto;
+}
+
+
+/* =========================================================
+   DESTINOS
+========================================================= */
+
+.destinos {
+    background: #eeece4;
+}
+
+.section-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 40px;
+
+    align-items: end;
+
+    margin-bottom: 45px;
+}
+
+.section-header > p {
+    max-width: 400px;
+
+    color: #666;
+}
+
+
+/* =========================================================
+   BUSCADOR
+========================================================= */
+
+.search-container {
+    margin-bottom: 25px;
+}
+
+.search-container input {
+    width: 100%;
+
+    padding: 18px 22px;
+
+    border: 1px solid #d3d0c6;
+
+    border-radius: 15px;
+
+    font-size: 16px;
+
+    outline: none;
+
+    background: white;
+
+    transition: 0.3s;
+}
+
+.search-container input:focus {
+    border-color: #333;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+
+/* =========================================================
+   FILTROS
+========================================================= */
+
+.filtros {
+    display: flex;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+
+    margin-bottom: 35px;
+}
+
+.filtro {
+    border: 1px solid #ccc;
+
+    background: white;
+
+    padding: 10px 17px;
+
+    border-radius: 30px;
+
+    transition: 0.3s;
+
+    white-space: nowrap;
+}
+
+.filtro:hover,
+.filtro.activo {
+    background: #1d281f;
+
+    color: white;
+}
+
+
+/* =========================================================
+   TARJETAS
+========================================================= */
+
+.lugares-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 30px;
+
+    width: 100%;
+}
+
+.lugar-card {
+    width: 100%;
+    min-width: 0;
+
+    background: white;
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.08);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.lugar-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.13);
+}
+
+
+/* =========================================================
+   FOTO
+========================================================= */
+
+.lugar-imagen {
+    width: 100%;
+
+    height: 230px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background: #e9e7df;
+}
+
+.lugar-imagen img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    transition: transform 0.5s ease;
+}
+
+.lugar-card:hover .lugar-imagen img {
+    transform: scale(1.04);
+}
+
+
+/* =========================================================
+   CATEGORÍA SOBRE FOTO
+========================================================= */
+
+.lugar-categoria {
+    position: absolute;
+
+    left: 16px;
+    bottom: 16px;
+
+    display: inline-block;
+
+    padding: 7px 12px;
+
+    background: rgba(255, 255, 255, 0.94);
+
+    color: #333;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================================================
+   INFORMACIÓN TARJETA
+========================================================= */
+
+.lugar-info {
+    padding: 24px;
+}
+
+.lugar-info h3 {
+    margin: 0 0 12px;
+
+    font-family: "Playfair Display", Georgia, serif;
+
+    font-size: 22px;
+
+    line-height: 1.2;
+
+    color: #222;
+}
+
+.lugar-info > p {
+    margin: 0 0 20px;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    color: #666;
+}
+
+
+/* =========================================================
+   DATOS
+========================================================= */
+
+.lugar-datos {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    margin-bottom: 20px;
+}
+
+.lugar-datos span {
+    font-size: 12px;
+
+    line-height: 1.4;
+
+    color: #777;
+}
+
+
+/* =========================================================
+   BOTÓN LUGAR
+========================================================= */
+
+.btn-lugar {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 100%;
+
+    padding: 12px 18px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #222;
+
+    color: white;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    transition: all 0.25s ease;
+}
+
+.btn-lugar:hover {
+    background: #9c7b3e;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   SIN RESULTADOS
+========================================================= */
+
+.sin-resultados {
+    grid-column: 1 / -1;
+
+    padding: 50px 30px;
+
+    text-align: center;
+
+    background: #f5f4ef;
+
+    border-radius: 15px;
+}
+
+.sin-resultados h3 {
+    margin-bottom: 10px;
+}
+
+.sin-resultados p {
+    color: #777;
+}
+
+
+/* =========================================================
+   CULTURA
+========================================================= */
+
+.cultura {
+    background: #1d281f;
+
+    color: white;
+}
+
+.cultura .section-header > p {
+    color: #c4c8c4;
+}
+
+.cultura-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 25px;
+}
+
+.cultura-card {
+    padding: 35px;
+
+    border: 1px solid rgba(255,255,255,0.15);
+
+    border-radius: 22px;
+
+    background: rgba(255,255,255,0.05);
+
+    transition: 0.3s;
+}
+
+.cultura-card:hover {
+    background: rgba(255,255,255,0.08);
+
+    transform: translateY(-5px);
+}
+
+.cultura-icon {
+    font-size: 45px;
+
+    margin-bottom: 15px;
+}
+
+.cultura-card h3 {
+    font-family: "Playfair Display", Georgia, serif;
+
+    font-size: 28px;
+
+    margin-bottom: 10px;
+}
+
+.cultura-card p {
+    color: #d0d5d0;
+
+    margin-bottom: 20px;
+}
+
+.cultura-card button {
+    background: white;
+
+    border: none;
+
+    border-radius: 30px;
+
+    padding: 11px 18px;
+
+    font-weight: bold;
+}
+
+.patrimonio {
+    display: block;
+
+    font-size: 12px;
+
+    margin-bottom: 18px;
+
+    opacity: 0.7;
+}
+
+
+/* =========================================================
+   RUTAS
+========================================================= */
+
+.rutas {
+    background: #f7f5ef;
+}
+
+.rutas-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 25px;
+}
+
+.ruta-card {
+    background: white;
+
+    padding: 35px;
+
+    border-radius: 22px;
+
+    border: 1px solid #e3e1d9;
+}
+
+.ruta-card > span {
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    font-weight: bold;
+
+    opacity: 0.6;
+}
+
+.ruta-card h3 {
+    font-family: "Playfair Display", Georgia, serif;
+
+    font-size: 26px;
+
+    margin: 15px 0;
+}
+
+.ruta-card p {
+    color: #666;
+
+    margin-bottom: 20px;
+}
+
+.ruta-tags {
+    display: flex;
+
+    gap: 8px;
+
+    flex-wrap: wrap;
+}
+
+.ruta-tags span {
+    background: #eeece4;
+
+    padding: 7px 11px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   HISTORIA
+========================================================= */
+
+.historia {
+    background: #e7e3d9;
+}
+
+.historia-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.historia-grid article {
+    background: white;
+
+    padding: 28px;
+
+    border-radius: 18px;
+}
+
+.historia-grid article span {
+    font-size: 35px;
+}
+
+.historia-grid h3 {
+    margin: 10px 0;
+
+    font-size: 20px;
+}
+
+.historia-grid p {
+    color: #666;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   ALREDEDORES
+========================================================= */
+
+.alrededores {
+    background: #202c22;
+
+    color: white;
+}
+
+.alrededores .section-header > p {
+    color: #c6ccc7;
+}
+
+.alrededores-list {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+}
+
+.alrededores-list span {
+    padding: 13px 18px;
+
+    border: 1px solid rgba(255,255,255,0.2);
+
+    border-radius: 30px;
+
+    background: rgba(255,255,255,0.05);
+}
+
+.nota {
+    margin-top: 30px;
+
+    color: #aeb5af;
+
+    font-size: 13px;
+
+    max-width: 800px;
+}
+
+
+/* =========================================================
+   PROYECTO
+========================================================= */
+
+.proyecto {
+    background: white;
+
+    text-align: center;
+}
+
+.proyecto-box {
+    max-width: 800px;
+
+    margin: auto;
+}
+
+.proyecto h2 {
+    font-family: "Playfair Display", Georgia, serif;
+
+    font-size: 55px;
+
+    margin-bottom: 20px;
+}
+
+.proyecto-box > p {
+    color: #666;
+}
+
+.creador {
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    text-align: left;
+
+    max-width: 550px;
+
+    margin: 35px auto;
+
+    padding: 22px;
+
+    background: #f3f2ed;
+
+    border-radius: 18px;
+}
+
+.creador-icon {
+    width: 60px;
+    min-width: 60px;
+
+    height: 60px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #202c22;
+
+    color: white;
+
+    border-radius: 50%;
+
+    font-size: 25px;
+}
+
+.creador h3 {
+    font-size: 22px;
+
+    margin: 2px 0;
+}
+
+.creador span {
+    font-size: 13px;
+
+    color: #777;
+}
+
+.año {
+    font-size: 13px;
+
+    margin-top: 15px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    background: #111712;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 50px 20px;
+}
+
+.footer-logo {
+    font-size: 25px;
+
+    font-weight: bold;
+
+    margin-bottom: 10px;
+}
+
+.footer-logo span {
+    font-weight: 400;
+}
+
+footer p {
+    color: #aaa;
+}
+
+.copyright {
+    margin-top: 20px;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.modal {
+    position: fixed;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 30px;
+
+    background: rgba(0, 0, 0, 0.75);
+
+    z-index: 9999;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease;
+
+    box-sizing: border-box;
+
+    overflow-y: auto;
+}
+
+.modal.activo {
+    opacity: 1;
+
+    visibility: visible;
+}
+
+.modal-content {
+    position: relative;
+
+    width: min(850px, 100%);
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    background: white;
+
+    border-radius: 20px;
+
+    padding: 35px;
+
+    box-sizing: border-box;
+
+    transform: translateY(20px);
+
+    transition: transform 0.25s ease;
+}
+
+.modal.activo .modal-content {
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   CERRAR MODAL
+========================================================= */
+
+.cerrar {
+    position: absolute;
+
+    top: 15px;
+
+    right: 15px;
+
+    width: 40px;
+
+    height: 40px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: rgba(0, 0, 0, 0.08);
+
+    color: #222;
+
+    font-size: 25px;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    z-index: 5;
+}
+
+.cerrar:hover {
+    background: #222;
+
+    color: white;
+}
+
+
+/* =========================================================
+   IMAGEN DEL MODAL
+========================================================= */
+
+.modal-imagen {
+    display: block;
+
+    width: 100%;
+
+    height: 360px;
+
+    object-fit: cover;
+
+    border-radius: 12px;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================================================
+   TEXTO MODAL
+========================================================= */
+
+.modal-content h2 {
+    font-family: "Playfair Display", Georgia, serif;
+
+    margin: 8px 0 18px;
+
+    font-size: 38px;
+
+    line-height: 1.15;
+
+    color: #222;
+}
+
+.modal-content p {
+    color: #555;
+}
+
+.modal-descripcion {
+    font-size: 16px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   DATOS MODAL
+========================================================= */
+
+.modal-datos {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 15px;
+
+    margin-top: 25px;
+}
+
+.modal-datos div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    padding: 18px;
+
+    background: #f4f3ee;
+
+    border-radius: 12px;
+}
+
+.modal-datos strong {
+    font-size: 13px;
+
+    color: #333;
+}
+
+.modal-datos span {
+    font-size: 14px;
+
+    color: #666;
+}
+
+
+/* =========================================================
+   SECCIONES DEL MODAL
+========================================================= */
+
+.modal-seccion {
+    margin-top: 25px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #e5e3dc;
+}
+
+.modal-seccion h3 {
+    margin-bottom: 10px;
+
+    font-size: 19px;
+}
+
+.dato-interesante {
+    padding: 20px;
+
+    background: #f4f3ee;
+
+    border-radius: 12px;
+
+    border-top: none;
+}
+
+
+/* =========================================================
+   BOTONES EXTRAS
+========================================================= */
+
+.extra-boton {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 12px 18px;
+
+    margin-top: 5px;
+
+    background: #202c22;
+
+    color: white;
+
+    border-radius: 25px;
+
+    font-weight: bold;
+
+    transition: 0.25s;
+}
+
+.extra-boton:hover {
+    background: #9c7b3e;
+
+    transform: translateY(-2px);
+}
+
+.video-pendiente {
+    padding: 20px;
+
+    background: #f5f4ef;
+
+    border-radius: 12px;
+}
+
+
+/* =========================================================
+   CULTURA EN MODAL
+========================================================= */
+
+.cultura-modal h2 {
+    margin-bottom: 20px;
+}
+
+.cultura-modal p {
+    color: #555;
+
+    line-height: 1.8;
+}
+
+.cultura-modal-icon {
+    font-size: 55px;
+
+    margin-bottom: 15px;
+}
+
+.dato-cultural {
+    margin-top: 25px;
+
+    padding: 22px;
+
+    background: #f4f3ee;
+
+    border-radius: 12px;
+}
+
+
+/* =========================================================
+   ANIMACIONES
+========================================================= */
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .lugares-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .historia-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================================================
+   TABLET PEQUEÑA
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .navbar {
+        padding: 0 5%;
+    }
+
+    section {
+        padding: 85px 5%;
+    }
+
+    .section-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+    .section-header > p {
+        max-width: 650px;
+    }
+
+    .hero {
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+
+    .cultura-grid,
+    .rutas-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =========================================================
+   CELULAR
+========================================================= */
+
+@media (max-width: 700px) {
+
+    /* ---------- NAV ---------- */
+
+    .navbar {
+        height: 68px;
+
+        padding: 0 5%;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .navbar nav {
+        display: none;
+
+        position: absolute;
+
+        top: 68px;
+
+        left: 0;
+
+        width: 100%;
+
+        background: rgba(255,255,255,0.98);
+
+        flex-direction: column;
+
+        gap: 0;
+
+        padding: 10px 20px 20px;
+
+        box-shadow:
+            0 10px 25px rgba(0,0,0,0.08);
+    }
+
+    .navbar nav.mostrar,
+    .navbar nav.menu-abierto {
+        display: flex;
+    }
+
+    .navbar nav a {
+        padding: 14px 5px;
+
+        border-bottom: 1px solid #eee;
+
+        font-size: 15px;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+
+    /* ---------- SECCIONES ---------- */
+
+    section {
+        padding: 70px 5%;
+    }
+
+
+    /* ---------- HERO ---------- */
+
+    .hero {
+        min-height: 100svh;
+
+        padding:
+            105px
+            6%
+            65px;
+
+        background-position: 60% center;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .mini-title {
+        font-size: 11px;
+
+        letter-spacing: 2.5px;
+    }
+
+    .hero h1 {
+        font-size: clamp(54px, 17vw, 82px);
+
+        letter-spacing: -3px;
+
+        margin-bottom: 20px;
+    }
+
+    .hero h2 {
+        font-size: 21px;
+
+        line-height: 1.35;
+    }
+
+    .hero p {
+        font-size: 15px;
+
+        line-height: 1.65;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .btn {
+        width: 100%;
+
+        text-align: center;
+
+        padding: 14px 18px;
+    }
+
+
+    /* ---------- TITULOS ---------- */
+
+    .intro h2,
+    .section-header h2 {
+        font-size: 38px;
+    }
+
+    .intro p:last-child {
+        font-size: 16px;
+    }
+
+
+    /* ---------- BUSCADOR ---------- */
+
+    .search-container input {
+        padding: 16px;
+
+        font-size: 15px;
+
+        border-radius: 12px;
+    }
+
+
+    /* ---------- FILTROS ---------- */
+
+    .filtros {
+        display: flex;
+
+        flex-wrap: nowrap;
+
+        overflow-x: auto;
+
+        padding-bottom: 8px;
+
+        margin-right: -5%;
+
+        padding-right: 5%;
+
+        scrollbar-width: none;
+    }
+
+    .filtros::-webkit-scrollbar {
+        display: none;
+    }
+
+    .filtro {
+        flex: 0 0 auto;
+
+        padding: 9px 14px;
+
+        font-size: 13px;
+    }
+
+
+    /* ---------- TARJETAS ---------- */
+
+    .lugares-grid {
+        grid-template-columns: 1fr;
+
+        gap: 22px;
+    }
+
+    .lugar-card {
+        border-radius: 16px;
+    }
+
+    .lugar-imagen {
+        height: 235px;
+    }
+
+    .lugar-info {
+        padding: 20px;
+    }
+
+    .lugar-info h3 {
+        font-size: 22px;
+    }
+
+    .lugar-info > p {
+        font-size: 14px;
+    }
+
+    .btn-lugar {
+        min-height: 46px;
+
+        font-size: 14px;
+    }
+
+
+    /* ---------- CULTURA ---------- */
+
+    .cultura-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cultura-card {
+        padding: 25px;
+
+        border-radius: 18px;
+    }
+
+    .cultura-card h3 {
+        font-size: 25px;
+    }
+
+    .cultura-card button {
+        padding: 12px 18px;
+
+        min-height: 44px;
+    }
+
+
+    /* ---------- RUTAS ---------- */
+
+    .rutas-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ruta-card {
+        padding: 25px;
+
+        border-radius: 18px;
+    }
+
+    .ruta-card h3 {
+        font-size: 22px;
+
+        line-height: 1.35;
+    }
+
+
+    /* ---------- HISTORIA ---------- */
+
+    .historia-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .historia-grid article {
+        padding: 24px;
+    }
+
+
+    /* ---------- ALREDEDORES ---------- */
+
+    .alrededores-list {
+        gap: 9px;
+    }
+
+    .alrededores-list span {
+        padding: 11px 14px;
+
+        font-size: 13px;
+    }
+
+
+    /* ---------- PROYECTO ---------- */
+
+    .proyecto h2 {
+        font-size: 43px;
+    }
+
+    .creador {
+        align-items: flex-start;
+
+        padding: 18px;
+
+        gap: 14px;
+    }
+
+    .creador-icon {
+        width: 52px;
+        min-width: 52px;
+
+        height: 52px;
+
+        font-size: 21px;
+    }
+
+    .creador h3 {
+        font-size: 19px;
+    }
+
+
+    /* ---------- MODAL ---------- */
+
+    .modal {
+        padding: 10px;
+    }
+
+    .modal-content {
+        width: 100%;
+
+        max-height: 94vh;
+
+        padding: 25px 18px;
+
+        border-radius: 18px;
+    }
+
+    .cerrar {
+        top: 10px;
+
+        right: 10px;
+
+        width: 38px;
+
+        height: 38px;
+    }
+
+    .modal-imagen {
+        height: 235px;
+
+        border-radius: 10px;
+
+        margin-bottom: 20px;
+    }
+
+    .modal-content h2 {
+        font-size: 28px;
+
+        padding-right: 35px;
+    }
+
+    .modal-descripcion {
+        font-size: 15px;
+
+        line-height: 1.7;
+    }
+
+    .modal-datos {
+        grid-template-columns: 1fr;
+
+        gap: 10px;
+    }
+
+    .modal-datos div {
+        padding: 15px;
+    }
+
+    .modal-seccion {
+        margin-top: 22px;
+    }
+
+    .extra-boton {
+        width: 100%;
+
+        min-height: 46px;
+
+        text-align: center;
+    }
+
+
+    /* ---------- FOOTER ---------- */
+
+    footer {
+        padding: 40px 20px;
+    }
+
+    .footer-logo {
+        font-size: 22px;
+    }
+
+}
+
+
+/* =========================================================
+   CELULARES MUY PEQUEÑOS
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .hero h1 {
+        font-size: 52px;
+    }
+
+    .hero h2 {
+        font-size: 19px;
+    }
+
+    .intro h2,
+    .section-header h2 {
+        font-size: 33px;
+    }
+
+    .lugar-imagen {
+        height: 210px;
+    }
+
+    .proyecto h2 {
+        font-size: 37px;
+    }
+
+}
+
+
+/* =========================================================
+   EVITAR PROBLEMAS CON IMÁGENES Y VIDEOS
+========================================================= */
+
+img,
+video,
+iframe {
+    max-width: 100%;
+}
+
+img {
+    height: auto;
+}
+
+
+/* =========================================================
+   MEJORAS PARA PANTALLAS TÁCTILES
+========================================================= */
+
+@media (hover: none) {
+
+    .lugar-card:hover,
+    .cultura-card:hover {
+        transform: none;
+    }
+
+    .lugar-card:hover .lugar-imagen img {
+        transform: none;
+    }
+
+    .btn-lugar,
+    .cultura-card button,
+    .extra-boton,
+    .filtro {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+}

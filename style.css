@@ -1,0 +1,901 @@
+/* =====================================================
+   HUALLANCAVIVE
+   DISEÑO PRINCIPAL
+===================================================== */
+
+
+/* ---------- CONFIGURACIÓN GENERAL ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7f7f5;
+    color: #202522;
+    line-height: 1.6;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+button,
+a {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+
+/* =====================================================
+   BARRA DE NAVEGACIÓN
+===================================================== */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    height: 76px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 6%;
+
+    background: rgba(10, 18, 16, 0.88);
+
+    backdrop-filter: blur(12px);
+
+    color: white;
+
+    z-index: 1000;
+}
+
+
+/* LOGO */
+
+.logo {
+    font-size: 23px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: #ffffff;
+}
+
+
+/* MENÚ */
+
+.navbar nav {
+    display: flex;
+    gap: 32px;
+}
+
+.navbar nav a {
+    color: white;
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.navbar nav a:hover {
+    color: #c7a86b;
+}
+
+
+/* =====================================================
+   PORTADA
+===================================================== */
+
+.hero {
+    height: 100vh;
+    min-height: 650px;
+
+    position: relative;
+
+    background-image:
+        url("imagenes/huallanca.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    align-items: center;
+
+    color: white;
+}
+
+
+/* OSCURECER IMAGEN */
+
+.hero-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5, 13, 11, 0.88),
+            rgba(5, 13, 11, 0.48),
+            rgba(5, 13, 11, 0.15)
+        );
+}
+
+
+/* CONTENIDO DE PORTADA */
+
+.hero-content {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 0 7%;
+}
+
+
+/* TEXTO PEQUEÑO */
+
+.hero-small {
+    font-size: 14px;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 10px;
+
+    opacity: 0.85;
+}
+
+
+/* TITULO PRINCIPAL */
+
+.hero h1 {
+    font-size: clamp(70px, 11vw, 150px);
+
+    line-height: 0.9;
+
+    letter-spacing: -5px;
+
+    font-weight: 900;
+
+    margin-left: 0;
+
+    text-align: left;
+}
+
+
+/* ESLOGAN */
+
+.hero h2 {
+    margin-top: 25px;
+
+    font-size: clamp(20px, 3vw, 35px);
+
+    font-weight: 400;
+
+    max-width: 650px;
+}
+
+
+/* DESCRIPCIÓN */
+
+.hero-description {
+    margin-top: 20px;
+
+    max-width: 600px;
+
+    font-size: 17px;
+
+    color: rgba(255,255,255,0.88);
+}
+
+
+/* BOTÓN */
+
+.hero-button {
+    display: inline-block;
+
+    margin-top: 32px;
+
+    padding: 15px 28px;
+
+    background: #c7a86b;
+
+    color: #151515;
+
+    text-decoration: none;
+
+    font-weight: 700;
+
+    border-radius: 4px;
+
+    transition: 0.3s;
+}
+
+.hero-button:hover {
+    transform: translateY(-3px);
+
+    background: #dfc487;
+}
+
+
+/* =====================================================
+   SECCIONES GENERALES
+===================================================== */
+
+section {
+    padding: 100px 7%;
+}
+
+.section-label {
+    color: #9c7b3e;
+
+    font-size: 13px;
+
+    letter-spacing: 4px;
+
+    font-weight: 800;
+
+    margin-bottom: 12px;
+}
+
+.section-heading {
+    max-width: 750px;
+
+    margin-bottom: 50px;
+}
+
+.section-heading h2 {
+    font-size: clamp(35px, 5vw, 58px);
+
+    line-height: 1.1;
+
+    margin-bottom: 18px;
+}
+
+.section-heading p {
+    color: #666;
+
+    font-size: 17px;
+}
+
+
+/* =====================================================
+   PRESENTACIÓN
+===================================================== */
+
+.presentation {
+    background: #ffffff;
+
+    display: flex;
+
+    justify-content: center;
+
+    text-align: center;
+}
+
+.presentation-text {
+    max-width: 850px;
+}
+
+.presentation-text h2 {
+    font-size: clamp(35px, 5vw, 60px);
+
+    line-height: 1.1;
+
+    margin-bottom: 25px;
+}
+
+.presentation-text p {
+    color: #666;
+
+    font-size: 18px;
+
+    margin-bottom: 15px;
+}
+
+
+/* =====================================================
+   BUSCADOR
+===================================================== */
+
+.search-section {
+    background: #ecebe5;
+
+    text-align: center;
+}
+
+.search-section h2 {
+    font-size: 48px;
+
+    margin-bottom: 35px;
+}
+
+.search-box {
+    max-width: 750px;
+
+    margin: auto;
+
+    display: flex;
+
+    background: white;
+
+    border-radius: 6px;
+
+    overflow: hidden;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.search-box input {
+    flex: 1;
+
+    border: none;
+
+    outline: none;
+
+    padding: 20px;
+
+    font-size: 16px;
+}
+
+.search-box button {
+    border: none;
+
+    padding: 0 30px;
+
+    background: #1f332c;
+
+    color: white;
+
+    font-weight: 700;
+
+    transition: 0.3s;
+}
+
+.search-box button:hover {
+    background: #c7a86b;
+
+    color: #111;
+}
+
+
+/* RESULTADOS DEL BUSCADOR */
+
+#searchResults {
+    max-width: 750px;
+
+    margin: 25px auto 0;
+
+    text-align: left;
+}
+
+
+/* =====================================================
+   LUGARES TURÍSTICOS
+===================================================== */
+
+.places-section {
+    background: #f7f7f5;
+}
+
+.places-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 28px;
+}
+
+
+/* TARJETA */
+
+.place-card {
+    background: white;
+
+    border-radius: 8px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 8px 30px rgba(0,0,0,0.07);
+
+    transition: 0.4s;
+}
+
+.place-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,0.13);
+}
+
+
+/* IMAGEN */
+
+.place-image {
+    position: relative;
+
+    height: 270px;
+
+    overflow: hidden;
+}
+
+.place-image img {
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: 0.5s;
+}
+
+.place-card:hover .place-image img {
+    transform: scale(1.07);
+}
+
+
+/* CATEGORÍA */
+
+.place-category {
+    position: absolute;
+
+    top: 15px;
+    left: 15px;
+
+    background: rgba(20,30,27,0.9);
+
+    color: white;
+
+    padding: 7px 12px;
+
+    border-radius: 3px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+
+/* INFORMACIÓN */
+
+.place-info {
+    padding: 25px;
+}
+
+.place-info h3 {
+    font-size: 24px;
+
+    margin-bottom: 10px;
+}
+
+.place-info p {
+    color: #6b6b6b;
+
+    font-size: 15px;
+
+    min-height: 75px;
+}
+
+.place-info button {
+    margin-top: 20px;
+
+    padding: 11px 18px;
+
+    background: transparent;
+
+    border: 1px solid #1f332c;
+
+    color: #1f332c;
+
+    font-weight: 700;
+
+    border-radius: 3px;
+
+    transition: 0.3s;
+}
+
+.place-info button:hover {
+    background: #1f332c;
+
+    color: white;
+}
+
+
+/* =====================================================
+   CULTURA
+===================================================== */
+
+.culture-section {
+    background:
+        linear-gradient(
+            135deg,
+            #17251f,
+            #273a31
+        );
+
+    color: white;
+}
+
+.culture-section .section-heading p {
+    color: #cbd3cf;
+}
+
+.culture-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 30px;
+}
+
+.culture-card {
+    background: rgba(255,255,255,0.07);
+
+    border: 1px solid rgba(255,255,255,0.12);
+
+    padding: 45px;
+
+    border-radius: 8px;
+
+    transition: 0.3s;
+}
+
+.culture-card:hover {
+    background: rgba(255,255,255,0.11);
+
+    transform: translateY(-5px);
+}
+
+.culture-icon {
+    font-size: 50px;
+
+    margin-bottom: 15px;
+}
+
+.culture-card h3 {
+    font-size: 30px;
+
+    margin-bottom: 15px;
+}
+
+.culture-card p {
+    color: #d5dcd8;
+
+    margin-bottom: 25px;
+}
+
+.culture-card button {
+    padding: 12px 20px;
+
+    background: #c7a86b;
+
+    border: none;
+
+    color: #151515;
+
+    font-weight: 700;
+
+    border-radius: 3px;
+}
+
+
+/* =====================================================
+   RUTAS
+===================================================== */
+
+.routes-section {
+    background: white;
+}
+
+.route-card {
+    max-width: 900px;
+
+    margin-bottom: 20px;
+
+    padding: 28px;
+
+    border-left: 4px solid #c7a86b;
+
+    background: #f5f4ef;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    transition: 0.3s;
+}
+
+.route-card:hover {
+    transform: translateX(8px);
+}
+
+.route-number {
+    font-size: 30px;
+
+    font-weight: 900;
+
+    color: #c7a86b;
+}
+
+.route-card h3 {
+    font-size: 22px;
+
+    margin-bottom: 5px;
+}
+
+.route-card p {
+    color: #666;
+}
+
+
+/* =====================================================
+   ALREDEDORES
+===================================================== */
+
+.surroundings {
+    background: #e9e7df;
+
+    text-align: center;
+}
+
+.surroundings .section-heading {
+    margin-left: auto;
+
+    margin-right: auto;
+}
+
+.surroundings-list {
+    max-width: 1000px;
+
+    margin: auto;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 12px;
+}
+
+.surroundings-list span {
+    padding: 12px 18px;
+
+    background: white;
+
+    border-radius: 30px;
+
+    color: #34423c;
+
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+    background: #111916;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 65px 20px;
+}
+
+.footer-logo {
+    font-size: 30px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 15px;
+}
+
+footer > p {
+    color: #adb5b1;
+}
+
+.creator {
+    margin-top: 30px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.creator p {
+    color: #c7a86b;
+}
+
+.copyright {
+    margin-top: 25px;
+
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   VENTANA MODAL
+===================================================== */
+
+.modal {
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0,0,0,0.72);
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+    z-index: 2000;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background: white;
+
+    width: 100%;
+
+    max-width: 850px;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    border-radius: 8px;
+
+    padding: 45px;
+
+    position: relative;
+}
+
+.close-modal {
+    position: absolute;
+
+    right: 20px;
+
+    top: 15px;
+
+    border: none;
+
+    background: transparent;
+
+    font-size: 35px;
+
+    cursor: pointer;
+
+    color: #333;
+}
+
+.modal-content h2 {
+    font-size: 38px;
+
+    margin-bottom: 15px;
+}
+
+.modal-content p {
+    color: #555;
+
+    margin-bottom: 15px;
+}
+
+
+/* =====================================================
+   RESPONSIVE — TABLETS
+===================================================== */
+
+@media (max-width: 1000px) {
+
+    .places-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .navbar nav {
+        gap: 15px;
+    }
+
+}
+
+
+/* =====================================================
+   RESPONSIVE — CELULARES
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .navbar {
+        height: auto;
+
+        padding: 18px 5%;
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    .navbar nav {
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    .hero {
+        min-height: 700px;
+    }
+
+    .hero-content {
+        padding: 0 7%;
+    }
+
+    .hero h1 {
+        font-size: 70px;
+
+        letter-spacing: -3px;
+    }
+
+    section {
+        padding: 75px 6%;
+    }
+
+    .places-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .culture-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .search-box {
+        flex-direction: column;
+    }
+
+    .search-box button {
+        padding: 16px;
+    }
+
+    .route-card {
+        align-items: flex-start;
+    }
+
+}

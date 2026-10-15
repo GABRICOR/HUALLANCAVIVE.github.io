@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HuallancaVive | Turismo de Huallanca</title>
+
+    <meta name="description"
+        content="HuallancaVive - Descubre los lugares turísticos, cultura, historia y naturaleza de Huallanca, Áncash.">
+
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         BARRA DE NAVEGACIÓN
+    ========================== -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            <span>HUALLANCA</span>VIVE
+        </div>
+
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#destinos">Destinos</a>
+            <a href="#cultura">Cultura</a>
+            <a href="#rutas">Rutas</a>
+            <a href="#historia">Historia</a>
+        </nav>
+
+        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+    </header>
+
+
+    <!-- =========================
+         PORTADA
+    ========================== -->
+
+    <section id="inicio" class="hero">
+
+        <div class="hero-content">
+
+            <p class="mini-title">DESCUBRE ÁNCASH</p>
+
+            <h1>HUALLANCA</h1>
+
+            <h2>Tierra Rica, Hermosa y Generosa</h2>
+
+            <p>
+                Descubre montañas, lagunas, cascadas, historia,
+                arqueología, cultura y paisajes únicos.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#destinos" class="btn primary">
+                    Explorar destinos
+                </a>
+
+                <a href="#cultura" class="btn secondary">
+                    Conocer Huallanca
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         INTRODUCCIÓN
+    ========================== -->
+
+    <section class="intro">
+
+        <p class="section-label">HUALLANCAVIVE</p>
+
+        <h2>Un lugar para descubrir</h2>
+
+        <p>
+            Huallanca reúne paisajes altoandinos, lagunas, cascadas,
+            montañas, restos arqueológicos, fósiles, tradiciones
+            y una importante riqueza cultural.
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         DESTACADOS
+    ========================== -->
+
+    <section id="destinos" class="destinos">
+
+        <div class="section-header">
+
+            <div>
+                <p class="section-label">LUGARES DESTACADOS</p>
+
+                <h2>DESCUBRE HUALLANCA</h2>
+            </div>
+
+            <p>
+                Explora algunos de los principales atractivos
+                naturales, históricos y culturales.
+            </p>
+
+        </div>
+
+
+        <!-- BUSCADOR -->
+
+        <div class="search-container">
+
+            <input
+                type="text"
+                id="buscador"
+                placeholder="🔎 Buscar un lugar turístico..."
+                onkeyup="buscarLugar()">
+
+        </div>
+
+
+        <!-- FILTROS -->
+
+        <div class="filtros">
+
+            <button onclick="filtrarCategoria('todos')" class="filtro activo">
+                Todos
+            </button>
+
+            <button onclick="filtrarCategoria('montaña')" class="filtro">
+                🏔️ Montañas
+            </button>
+
+            <button onclick="filtrarCategoria('laguna')" class="filtro">
+                💧 Lagunas
+            </button>
+
+            <button onclick="filtrarCategoria('cascada')" class="filtro">
+                💦 Cascadas
+            </button>
+
+            <button onclick="filtrarCategoria('arqueologia')" class="filtro">
+                🏺 Arqueología
+            </button>
+
+            <button onclick="filtrarCategoria('paleontologia')" class="filtro">
+                🦖 Fósiles
+            </button>
+
+            <button onclick="filtrarCategoria('patrimonio')" class="filtro">
+                🏛️ Patrimonio
+            </button>
+
+        </div>
+
+
+        <!-- TARJETAS -->
+
+        <div id="contenedor-lugares" class="lugares-grid">
+
+            <!-- Los lugares se generan automáticamente con JavaScript -->
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CULTURA
+    ========================== -->
+
+    <section id="cultura" class="cultura">
+
+        <div class="section-header">
+
+            <div>
+                <p class="section-label">IDENTIDAD</p>
+
+                <h2>Cultura y tradición</h2>
+            </div>
+
+            <p>
+                Huallanca también vive a través de sus costumbres,
+                celebraciones y expresiones culturales.
+            </p>
+
+        </div>
+
+
+        <div class="cultura-grid">
+
+
+            <!-- NEGRITOS -->
+
+            <article class="cultura-card">
+
+                <div class="cultura-icon">
+                    🕺
+                </div>
+
+                <h3>Los Negritos de Huallanca</h3>
+
+                <p>
+                    Una de las expresiones culturales más importantes
+                    de Huallanca, vinculada a la identidad y tradición
+                    de sus habitantes.
+                </p>
+
+                <span class="patrimonio">
+                    Patrimonio Cultural de la Nación
+                </span>
+
+                <button onclick="mostrarCultura('negritos')">
+                    Conocer más →
+                </button>
+
+            </article>
+
+
+            <!-- TAUROMAQUIA -->
+
+            <article class="cultura-card">
+
+                <div class="cultura-icon">
+                    🐂
+                </div>
+
+                <h3>Tradición taurina</h3>
+
+                <p>
+                    Una tradición vinculada a las festividades de
+                    Huallanca y a la Plaza de Toros Montecarmelo.
+                </p>
+
+                <button onclick="mostrarCultura('toros')">
+                    Conocer más →
+                </button>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         RUTAS
+    ========================== -->
+
+    <section id="rutas" class="rutas">
+
+        <div class="section-header">
+
+            <div>
+                <p class="section-label">AVENTURA</p>
+
+                <h2>Rutas para descubrir</h2>
+            </div>
+
+            <p>
+                Recorre diferentes paisajes y descubre la riqueza
+                natural y arqueológica del distrito.
+            </p>
+
+        </div>
+
+
+        <div class="rutas-grid">
+
+            <article class="ruta-card">
+
+                <span>🥾 RUTA 01</span>
+
+                <h3>
+                    Huallanca → Sagrapetaca → Sheglla → Gaganani
+                </h3>
+
+                <p>
+                    Una ruta que combina arqueología, paisajes
+                    y cascadas.
+                </p>
+
+                <div class="ruta-tags">
+
+                    <span>🏺 Arqueología</span>
+                    <span>💦 Cascadas</span>
+                    <span>🌄 Paisajes</span>
+
+                </div>
+
+            </article>
+
+
+            <article class="ruta-card">
+
+                <span>🥾 RUTA 02</span>
+
+                <h3>
+                    Cuncush → Azulcocha → Condorcocha →
+                    Susucocha → Chaupijanca → Cochahuayín
+                </h3>
+
+                <p>
+                    Recorrido de alta montaña entre lagunas
+                    y paisajes de la Cordillera Huallanca.
+                </p>
+
+                <div class="ruta-tags">
+
+                    <span>🏔️ Montaña</span>
+                    <span>💧 Lagunas</span>
+                    <span>🥾 Trekking</span>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         HISTORIA
+    ========================== -->
+
+    <section id="historia" class="historia">
+
+        <div class="section-header">
+
+            <div>
+                <p class="section-label">PATRIMONIO</p>
+
+                <h2>Historia de Huallanca</h2>
+            </div>
+
+        </div>
+
+
+        <div class="historia-grid">
+
+            <article>
+                <span>🏛️</span>
+                <h3>Plaza de Armas</h3>
+                <p>
+                    Uno de los principales espacios públicos
+                    del centro de Huallanca.
+                </p>
+            </article>
+
+
+            <article>
+                <span>⛪</span>
+                <h3>Iglesia Matriz</h3>
+                <p>
+                    Parte del patrimonio religioso y cultural
+                    de la ciudad.
+                </p>
+            </article>
+
+
+            <article>
+                <span>⛪</span>
+                <h3>Iglesia Carmen Alto</h3>
+                <p>
+                    Uno de los espacios religiosos tradicionales
+                    de Huallanca.
+                </p>
+            </article>
+
+
+            <article>
+                <span>🌉</span>
+                <h3>Puente Arequipa</h3>
+                <p>
+                    Puente histórico ubicado sobre el río Ishpaj.
+                </p>
+            </article>
+
+
+            <article>
+                <span>🏟️</span>
+                <h3>Plaza de Toros Montecarmelo</h3>
+                <p>
+                    Espacio relacionado con la tradición taurina
+                    de Huallanca.
+                </p>
+            </article>
+
+
+            <article>
+                <span>🥾</span>
+                <h3>Caminos antiguos</h3>
+                <p>
+                    Huellas de antiguas rutas que conectaron
+                    diferentes sectores de los Andes.
+                </p>
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ALREDEDORES
+    ========================== -->
+
+    <section class="alrededores">
+
+        <div class="section-header">
+
+            <div>
+
+                <p class="section-label">
+                    MÁS ALLÁ DE HUALLANCA
+                </p>
+
+                <h2>Explora los alrededores</h2>
+
+            </div>
+
+            <p>
+                Lugares cercanos que pueden complementar
+                tu experiencia de viaje.
+            </p>
+
+        </div>
+
+
+        <div class="alrededores-list">
+
+            <span>🏔️ Cordillera Huayhuash</span>
+
+            <span>🏔️ Yerupajá</span>
+
+            <span>🏔️ Jirishanca</span>
+
+            <span>🏔️ Siula</span>
+
+            <span>💧 Carhuacocha</span>
+
+            <span>🏛️ Huánuco Pampa</span>
+
+            <span>🌄 Tantamayo</span>
+
+            <span>💧 Lauricocha</span>
+
+        </div>
+
+
+        <p class="nota">
+
+            Estos destinos se presentan como lugares cercanos
+            a Huallanca y no necesariamente como atractivos
+            pertenecientes al distrito.
+
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         SOBRE EL PROYECTO
+    ========================== -->
+
+    <section class="proyecto">
+
+        <div class="proyecto-box">
+
+            <p class="section-label">SOBRE ESTA WEB</p>
+
+            <h2>HuallancaVive</h2>
+
+            <p>
+                HuallancaVive es una guía turística digital creada
+                con el objetivo de difundir y poner en valor los
+                atractivos naturales, históricos, arqueológicos
+                y culturales de Huallanca.
+            </p>
+
+            <div class="creador">
+
+                <div class="creador-icon">
+                    💻
+                </div>
+
+                <div>
+
+                    <strong>
+                        Creado y desarrollado por
+                    </strong>
+
+                    <h3>
+                        Gabriel Cornelio Reyes
+                    </h3>
+
+                    <span>
+                        Proyecto de Educación para el Trabajo — EPT
+                    </span>
+
+                </div>
+
+            </div>
+
+            <p class="año">
+                Huallanca · Áncash · Perú · 2026
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <div class="footer-logo">
+            HUALLANCA<span>VIVE</span>
+        </div>
+
+        <p>
+            Tierra rica, hermosa, rica y generosa.
+        </p>
+
+        <p class="copyright">
+            © 2026 HuallancaVive · Proyecto desarrollado por
+            Gabriel Cornelio Reyes
+        </p>
+
+    </footer>
+
+
+    <!-- =========================
+         VENTANA MODAL
+    ========================== -->
+
+    <div id="modal" class="modal">
+
+        <div class="modal-content">
+
+            <button class="cerrar" onclick="cerrarModal()">
+                ×
+            </button>
+
+            <div id="modal-body"></div>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
